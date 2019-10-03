@@ -1,0 +1,26 @@
+.Tab {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    width:250px;
+    color: gray;
+    font-weight: 500;
+    height: 100%;
+    padding: 0px
+}
+
+.TabIcon {
+    margin-left:25px;
+    margin-top: 14px;
+}
+
+.TabText {
+    margin-left:20px;
+    margin-top:12px;
+    font-size:14px;
+}
+    
+.SelectedTab {
+    color: #D22F23 !important;
+    border-bottom: 3px solid #D22F23;
+}

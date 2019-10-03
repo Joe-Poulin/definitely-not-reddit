@@ -1,0 +1,8 @@
+.InboxTabs {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    height: 45px;
+    border-bottom: 1px solid #eee;
+    padding-left:10px;
+}

@@ -1,0 +1,29 @@
+.RightSidebar {
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    right:0;
+    padding-right:15px;
+}
+
+.RightIcon {
+    margin-left:18px;
+    margin-top:18px;
+    margin-bottom:18px;
+}
+
+.Calendar {
+    color:#4E60CF;
+}
+
+.LightBulb {
+    color: 	#E7B71D;
+}
+
+.Edit {
+    color: #5D8FF6;
+}
+
+.NoColor {
+    opacity: .3;
+}

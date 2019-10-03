@@ -1,0 +1,13 @@
+.App {
+  background-color: #fff;
+  top:0;
+  width:100%;
+  position: absolute;
+  overflow-y:hidden;
+}
+
+.SubTopBar {
+  display: flex;
+  flex-direction: row;
+  justify-content: start;
+}

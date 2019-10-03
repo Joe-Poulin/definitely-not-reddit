@@ -1,0 +1,37 @@
+.MainContentHeader {
+    display: flex;
+    flex-direction: row;
+    justify-content: start;
+    border-bottom: 1px solid #eee;
+    border-right: 1px solid #eee;
+    height:45px;
+    padding-left:10px;
+}
+
+.Icon {
+    color: gray;
+    opacity: .8;
+}
+
+.IconSm {
+    margin-top:14px;
+    margin-left:6px;
+}
+
+.IconMed {
+    font-size:20px;
+    margin-top:12px;
+    margin-left:25px;
+}
+
+.IconLast {
+    margin-right:25px;
+}
+
+.EmailCount {
+    font-size: 14px;
+    color: gray;
+    height: 45px;
+    line-height: 45px;
+    margin-left:760px;
+}

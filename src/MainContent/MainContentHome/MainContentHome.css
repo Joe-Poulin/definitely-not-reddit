@@ -1,0 +1,10 @@
+.MainContentHome {
+    min-width: calc(100vw - 900px);
+}
+
+.Scroll {
+    max-height:calc(100vh - 106px);
+    max-width:calc(100vw - 335px);
+    overflow-y: scroll;
+    overflow-x:hidden;
+}

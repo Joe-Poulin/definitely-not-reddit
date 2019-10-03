@@ -1,0 +1,72 @@
+.PostMain {
+    display: flex;
+    flex-direction: row;
+}
+
+.PostMainHeader {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+
+.PostMainHeaderTop {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.PostMainHeaderTopLeft {
+    display: flex;
+    flex-direction: row;
+}
+
+.PostTitle {
+    margin-left:25px;
+    font-size: 24px;
+    color: rgb(53, 53, 53);
+}
+
+.PostMainHeaderBottom {
+    margin-left:8px;
+    font-size: 12px;
+    font-weight: 400;
+}
+
+.SubredditName {
+    margin-top: auto;
+    margin-bottom: auto;
+    margin-left: 8px;
+    font-size: 14px;
+    font-weight: 600;
+}
+
+.SubredditLink {
+    margin-top: auto;
+    margin-bottom: auto;
+    font-size: 12px;
+    font-weight: 400;
+}
+
+.PostScore {
+    margin-top: auto;
+    margin-bottom: auto;
+    font-size: 12px;
+    font-weight: 400;
+}
+
+.PostDate {
+    margin-top: auto;
+    margin-bottom: auto;    
+    font-size: 12px;
+    font-weight: 400;
+}
+
+.PostMainContent {
+    margin-left: 8px;
+    margin-top:12px;
+}
+
+.PostImage {
+    max-width: 100%;
+    max-height: calc(100vh - 230px);
+}

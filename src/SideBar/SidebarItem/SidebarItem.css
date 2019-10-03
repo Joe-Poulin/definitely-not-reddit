@@ -1,0 +1,31 @@
+.SidebarMenuItem {
+    padding:8px;
+    display: flex;
+    flex-direction: row;
+    margin-bottom:4px;
+    justify-content: flex-start;
+    width: 240px;
+    font-size: 14px;
+    margin-right:10px;
+}
+
+.SidebarMenuItemImg {
+    margin-left: 25px;
+    width:15%;
+}
+
+.SidebarMenuItemText {
+    width:60%;
+}
+
+.Selected {
+    background-color: #FAE8E6;
+    color: #D22F23 !important;
+    font-weight: bold;
+    border-top-right-radius: 50px;
+    border-bottom-right-radius: 50px;
+}
+
+.SidebarMenuItemImg {
+    color: gray;
+}
