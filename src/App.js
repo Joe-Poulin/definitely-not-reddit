@@ -7,18 +7,20 @@ import RightSidebar from './RightSidebar/RightSidebar';
 import { BrowserRouter } from 'react-router-dom';
 import axios from 'axios';
 import PostsService from './Services/PostsService';
+import keys from './private/keys.json';
 
 class App extends Component {
 
-  startingUrl = "https://def-not-reddit.web.app/";
-  //startingUrl = "http://localhost:3000/"
+  environment = keys.localEnv;
+  //environment = keys.prodEnv;
+
+  startingUrl = this.environment.startingUrl;
+  user = this.environment.clientId;
+  pw = this.environment.clientSecret;
 
   randomString = Math.random().toString(36).substring(2, 15) + Math.random().toString(36).substring(2, 15);
-  redditOauthUrl = "https://www.reddit.com/api/v1/authorize?client_id=MZhFsHjfuuuu1g&response_type=code" + "&" + "state="+this.randomString+"&redirect_uri="+this.startingUrl+"&duration=permanent&scope=read"
+  redditOauthUrl = "https://www.reddit.com/api/v1/authorize?client_id="+this.user+"&response_type=code" + "&" + "state="+this.randomString+"&redirect_uri="+this.startingUrl+"&duration=permanent&scope=read"
   redditGetTokenUrl = "https://www.reddit.com/api/v1/access_token";
-
-  user = "MZhFsHjfuuuu1g";
-  pw = "o8MIZEor9q1r-DCpA3UvFYa3l_8";
 
   accessToken = '';
   refreshToken = '';
@@ -29,7 +31,6 @@ class App extends Component {
 
   // when the app loads authenticate with reddit
   componentDidMount() {
-    console.log('yeet! update worked once again, yall');
 
     let params = new URLSearchParams(window.location.search);
     let code = params.get('code');

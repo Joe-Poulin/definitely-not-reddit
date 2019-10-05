@@ -1,14 +1,27 @@
+.MainContentHeader {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.SubMainContentHeaderContainer {
+    display: flex;
+    flex-direction: row;
+}
+
 .EmailCountPost {
     font-size: 14px;
     color: gray;
     height: 45px;
     line-height: 45px;
-    margin-left:519px;
+    margin-right:10px;
 }
 
 .BackContainer {
     border-radius: 100%;
     height: 32px;
+    min-height: 32px;
+    min-width: 32px;
     width: 32px;
     margin:auto;
     cursor: pointer;

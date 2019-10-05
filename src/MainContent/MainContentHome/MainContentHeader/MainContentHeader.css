@@ -1,7 +1,7 @@
 .MainContentHeader {
     display: flex;
     flex-direction: row;
-    justify-content: start;
+    justify-content: space-between;
     border-bottom: 1px solid #eee;
     border-right: 1px solid #eee;
     height:45px;
@@ -33,5 +33,4 @@
     color: gray;
     height: 45px;
     line-height: 45px;
-    margin-left:760px;
 }
