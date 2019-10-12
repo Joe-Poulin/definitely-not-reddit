@@ -6,7 +6,7 @@ import { faSquare, faRedo, faCaretDown, faEllipsisV, faAngleLeft, faAngleRight, 
 const mainContentHeader = (props) => {
 
     return(
-        <div className="MainContentHeader">
+        <div className="MainContentHeader HiddenInMobile">
             <div className="SubMainContentHeaderContainer">
                 <FontAwesomeIcon icon={faSquare} className="Icon IconMed"/>
                 <FontAwesomeIcon icon={faCaretDown} className="Icon IconSm"/>

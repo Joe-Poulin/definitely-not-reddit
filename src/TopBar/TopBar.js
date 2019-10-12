@@ -9,7 +9,7 @@ import { Link } from "react-router-dom";
 
 const topbar = () => {
     return(
-        <div className="TopBar">
+        <div className="TopBar HiddenInMobile">
             <div className="TopBarContainer">
                 <div className="TopBarChild Settings">
                     <img src={settings} alt="" height="17px" className="SettingsLogo"/>

@@ -8,6 +8,7 @@ import { BrowserRouter } from 'react-router-dom';
 import axios from 'axios';
 import PostsService from './Services/PostsService';
 import keys from './private/keys.json';
+import MobileTopBar from './MobileTopBar/MobileTopBar';
 
 class App extends Component {
 
@@ -110,6 +111,7 @@ class App extends Component {
     return (
       <BrowserRouter>
         <div className="App">
+          <MobileTopBar className="OnlyInMobile"/>
           <TopBar/>
           <div className="SubTopBar">
             <SideBar/>

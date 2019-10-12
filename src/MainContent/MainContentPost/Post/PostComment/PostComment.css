@@ -1,0 +1,21 @@
+.PostComment {
+    display: flex;
+    flex-direction: column;
+    margin-right: 10px;
+    margin-left: 10px;
+    border-bottom: 2px solid #eee;
+}
+
+.PostCommentAuthor {
+    margin-top: 10px;
+    font-size: 13px;
+}
+
+.PostCommentScore {
+    margin-top: 2px;
+    font-size: 12px;
+}
+
+.PostCommentComment {
+    font-size: 12px;
+}

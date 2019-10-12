@@ -7,7 +7,7 @@ import { faInbox, faStar, faClock, faPaperPlane, faFile, faAngleDown } from '@fo
 const sidebar = () => {
     return(
 
-        <div className="Sidebar">
+        <div className="Sidebar HiddenInMobile">
             <div className="ComposeButton">
                 <div className="ComposeButtonPlus">
                     <img src={plus} alt=""/>

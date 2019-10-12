@@ -8,3 +8,9 @@
     overflow-y: scroll;
     overflow-x:hidden;
 }
+
+@media only screen and (max-width: 480px) {
+    .Scroll {
+        max-width: 100% !important;
+    }
+}

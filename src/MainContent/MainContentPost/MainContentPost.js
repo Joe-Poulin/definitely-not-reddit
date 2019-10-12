@@ -3,8 +3,13 @@ import './MainContentPost.css';
 import MainContentPostHeader from './MainContentPostHeader/MainContentPostHeader';
 import Post from './Post/Post';
 import PostsService from '../../Services/PostsService';
+import PostComment from './Post/PostComment/PostComment';
 
 class MainContentPost extends Component {
+
+    state = {
+        postComments: [] 
+    };
 
     constructor(props) {
         super(props);
@@ -21,6 +26,7 @@ class MainContentPost extends Component {
         const prevPost = PostsService.getPostWithIndex(PostsService.getPostById(id).index - 1);
         if (prevPost) {
             this.props.history.push(prevPost.key)
+            this.setState({postComments: []});
         }
     }
 
@@ -28,7 +34,14 @@ class MainContentPost extends Component {
         const nextPost = PostsService.getPostWithIndex(PostsService.getPostById(id).index + 1);
         if (nextPost) {
             this.props.history.push(nextPost.key)
+            this.setState({postComments: []});
         }
+    }
+
+    loadCommentsClicked = (post) => {
+        PostsService.getCommentsForPost(post.key, post.subreddit).then(comments => {
+            this.setState({postComments: comments.map(c => <PostComment comment={c}/>)});
+        });
     }
     
     render() {
@@ -51,7 +64,9 @@ class MainContentPost extends Component {
                     nextClicked={this.nextClicked}
                     post={post}/>
                 <div className="Scroll">
-                    <Post post={post}/>
+                    <Post post={post}
+                        postComments={this.state.postComments}
+                        loadCommentsClicked={this.loadCommentsClicked}/>
                 </div>
             </div>
         );

@@ -70,3 +70,13 @@
     max-width: 100%;
     max-height: calc(100vh - 230px);
 }
+
+.LoadComments {
+    font-size: 12px;
+    margin-left: 8px; 
+    margin-top: 10px;
+    color: blue;
+    text-decoration: underline;
+    cursor: pointer;
+    margin-bottom: 10px;
+}

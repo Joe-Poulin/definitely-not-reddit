@@ -11,3 +11,21 @@
   flex-direction: row;
   justify-content: start;
 }
+
+@media only screen and (max-width: 480px) {
+  .HiddenInMobile {
+      display: none !important;
+  }
+
+  .OnlyInMobile {
+    display: block !important;
+  }
+}
+
+.OnlyInMobile {
+  display: none !important;
+}
+
+.MobileRowRight {
+  text-align: right;
+}

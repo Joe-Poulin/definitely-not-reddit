@@ -69,3 +69,48 @@
     font-weight: 400 !important;
     background-color: rgb(243, 243, 243);
 }
+
+@media only screen and (max-width: 480px) {
+    .InboxItem {
+        height: 50px;
+    }
+
+    .Subreddit {
+        font-size:12px;
+    }
+
+    .Title {
+        line-height: 25px;
+        font-size: 11px;
+    }
+
+    .InboxIcon {
+        margin-top:16px !important;
+    }
+
+    .PostScore {
+        
+        font-size:11px !important;
+    }
+}
+
+.ExpandableMobile {
+    padding-top:3px;
+    padding-bottom:3px;
+    display: flex !important;
+    padding-left:10px;
+    flex-direction: column;
+    width: 100%;
+}
+
+.MobileRow {
+    display: flex;
+    flex-direction: row;
+    height: 25px;
+    justify-content: space-between;
+}
+
+
+.OnlyInMobile {
+    display: none !important;
+  }

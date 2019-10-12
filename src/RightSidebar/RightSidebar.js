@@ -6,7 +6,7 @@ import { faCalendar, faLightbulb, faEdit, faPlus, faAngleRight } from '@fortawes
 const rightSidebar = (props) => {
 
     return(
-        <div className="RightSidebar">
+        <div className="RightSidebar HiddenInMobile">
             <FontAwesomeIcon icon={faCalendar} className="RightIcon Calendar"/>
             <FontAwesomeIcon icon={faLightbulb} className="RightIcon LightBulb"/>
             <FontAwesomeIcon icon={faEdit} className="RightIcon Edit"/>

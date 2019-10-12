@@ -26,6 +26,12 @@ const post = (props) => {
 
     var score = props.post.score.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
 
+    let comments = [];
+
+    if (props.postComments) {
+        comments = props.postComments;
+    }
+
     return(
         <div>
            <PostHeader postTitle={props.post.title}/>
@@ -52,6 +58,14 @@ const post = (props) => {
                     </div>
                     <div className="PostMainContent">
                         {content}
+                    </div>
+                    <div className="LoadComments"
+                        onClick={() => props.loadCommentsClicked(props.post)}>
+                        Load comments
+                    </div>
+
+                    <div className="Comments">
+                        {comments}
                     </div>
                 </div>
                 
