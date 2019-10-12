@@ -5,18 +5,25 @@ const PostService = {
 
     posts: [],
 
+    getConfig: function() {
+        return {
+            headers: {
+              'Authorization': 'bearer ' + localStorage.getItem('accessToken')
+            }
+          };
+    },
+
     // gets post with id
     getPostById: function(id) {
         return this.posts.filter(p => p.key === id)[0];
     },
 
     // gets posts for user
-    getPosts: function(config) {
+    getPosts: function() {
 
         // then get users posts
         return new Promise((resolve, reject) => {
-            axios.get('https://oauth.reddit.com/hot?limit=100', config).then(response => {
-                // console.log(response.data.data.children);
+            axios.get('https://oauth.reddit.com/hot?limit=100', this.getConfig()).then(response => {
                 let posts = response.data.data.children.map((c, index) => {
                     var value = {};
                     value.value = c.data;
@@ -58,17 +65,15 @@ const PostService = {
         };
 
         return new Promise((resolve, reject) => {
-            axios.get('https://oauth.reddit.com/r/' + subreddit + '/comments/' + id, config).then(response => {
+            axios.get('https://oauth.reddit.com/r/' + subreddit + '/comments/' + id, this.getConfig()).then(response => {
                 console.log(response);
                 let comments = [];
                 response.data.map((c, index) => {
                     //console.log(c);
 
-                    comments = c.data.children.map(c1 => {
+                    comments = c.data.children.map((c1, index) => {
                         var value = {};
                         value.value = c1.data;
-
-                        console.log(c1);
 
                         let html = '';
 
@@ -77,20 +82,13 @@ const PostService = {
                         }
                         
                         return {
+                            index: index,
                             body_html: html,
                             score: value.value.score,
                             author: value.value.author
                         }
                     })
-                    
-                    // return {
-                    //     body_html: value.value.body_html,
-                    //     score: value.value.score,
-                    //     author: value.value.author
-                    //}
                 });
-
-                console.log(comments);
 
                 resolve(comments);
             });

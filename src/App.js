@@ -95,14 +95,7 @@ class App extends Component {
 
   // calls the PostService to get the posts,
   sendGetPostsRequest() {
-
-    const config = {
-      headers: {
-        'Authorization': 'bearer ' + this.accessToken
-      }
-    };
-
-    PostsService.getPosts(config).then(posts => {
+    PostsService.getPosts().then(posts => {
       this.setState({posts: posts});
     });
   }
