@@ -1,0 +1,8 @@
+.Spinner {
+    text-align:center;
+    height:calc(100vh - 106px);
+    width:calc(100vw - 335px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}

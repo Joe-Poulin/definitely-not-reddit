@@ -10,10 +10,15 @@ class MainContent extends Component {
         return (
             <div className="MainContent">            
                 <Switch>
-                    <Route path="/:id" exact component={MainContentPost}
+                    <Route path="/:id" 
+                        exact 
+                        component={MainContentPost}
                         posts={this.props.posts}/>
                     <Route path="/"
-                        render={(routeProps) => (<MainContentHome {...routeProps} posts={this.props.posts}/>)}/>
+                        render={(routeProps) => 
+                            (<MainContentHome {...routeProps} 
+                                gettingPosts={this.props.gettingPosts}
+                                posts={this.props.posts}/>)}/>
                 </Switch>
             </div>
         ) 

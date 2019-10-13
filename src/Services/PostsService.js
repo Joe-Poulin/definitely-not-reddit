@@ -75,18 +75,7 @@ const PostService = {
                         var value = {};
                         value.value = c1.data;
 
-                        let html = '';
-
-                        if (value.value.body_html) {
-                            html = DecoderService.decodeHtml(value.value.body_html)
-                        }
-                        
-                        return {
-                            index: index,
-                            body_html: html,
-                            score: value.value.score,
-                            author: value.value.author
-                        }
+                        return this.getComment(value.value);
                     })
                 });
 
@@ -94,6 +83,36 @@ const PostService = {
             });
         });  
     },
+
+    getComment: function(c) {
+
+        // handle body_html
+        let html = '';
+        if (c.body_html) {
+            html = DecoderService.decodeHtml(c.body_html)
+        }
+        
+        // handle replies
+        let replies = [];
+        // if (c.replies 
+        //     && c.replies.data
+        //     && c.replies.data.children
+        //     && c.replies.data.children.data) {
+        //     replies = c.replies.data.children.data.map(d => {
+        //         return d;
+        //     });
+        // }
+
+        console.log(replies);
+
+        return {
+            key: c.id,
+            body_html: html,
+            score: c.score,
+            author: c.author,
+            replies: replies
+        }
+    }
 }
 
 export default PostService

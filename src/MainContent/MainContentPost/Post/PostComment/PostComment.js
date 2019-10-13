@@ -10,9 +10,9 @@ const postComment = (props) => {
 
     var commentClass = 'PostComment'
 
-    if (props.comment.index % 2 == 0) {
-        commentClass += ' CommentDark'
-    }
+    // if (props.comment.index % 2 == 0) {
+    //     commentClass += ' CommentDark'
+    // }
 
     return(
         <div className={commentClass}>

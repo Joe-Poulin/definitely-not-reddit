@@ -27,7 +27,8 @@ class App extends Component {
   refreshToken = '';
 
   state = {
-    posts: []
+    posts: [],
+    gettingPosts: false
   };
 
   // when the app loads authenticate with reddit
@@ -95,8 +96,10 @@ class App extends Component {
 
   // calls the PostService to get the posts,
   sendGetPostsRequest() {
+    this.setState({gettingPosts: true});
     PostsService.getPosts().then(posts => {
       this.setState({posts: posts});
+      this.setState({gettingPosts: false});
     });
   }
 
@@ -108,7 +111,9 @@ class App extends Component {
           <TopBar/>
           <div className="SubTopBar">
             <SideBar/>
-            <MainContent posts={this.state.posts}/>
+            <MainContent 
+              posts={this.state.posts}
+              gettingPosts={this.state.gettingPosts}/>
             <RightSidebar/>
           </div>
         </div>
