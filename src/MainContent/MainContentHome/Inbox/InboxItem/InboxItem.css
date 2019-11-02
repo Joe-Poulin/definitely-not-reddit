@@ -89,7 +89,7 @@
     }
 
     .PostScore {
-        
+        max-width: none !important;
         font-size:11px !important;
     }
 }
@@ -100,7 +100,7 @@
     display: flex !important;
     padding-left:10px;
     flex-direction: column;
-    width: 100%;
+    width: calc(100vw - 40px) !important;
 }
 
 .MobileRow {
@@ -110,7 +110,23 @@
     justify-content: space-between;
 }
 
+@media only screen and (max-width: 480px) { 
+    .OnlyInMobile {
+        display: block !important;
+    }
 
+    .MobileRow {
+        margin-top: -3px;
+    }
+
+    .MobileStar {
+        margin-top: 5px !important;
+    }
+}
+
+@media only screen and (min-width: 481px) { 
 .OnlyInMobile {
     display: none !important;
-  }
+    }
+}
+  

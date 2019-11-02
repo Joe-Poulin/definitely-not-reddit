@@ -41,7 +41,7 @@ const inboxItem = (props) => {
                 </div>
                 <div className="MobileRow">
                     <span className={postTitleClass}>{props.title}</span>
-                    <FontAwesomeIcon className="InboxIcon MobileRowRight" icon={faStar}/>
+                    <FontAwesomeIcon className="InboxIcon MobileRowRight MobileStar" icon={faStar}/>
                 </div>
             </div>
         </div>

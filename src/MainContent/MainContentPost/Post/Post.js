@@ -5,31 +5,54 @@ import senderImg from './../../../assets/sender.png';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faAngleDown } from '@fortawesome/free-solid-svg-icons';
 import DecoderService from './../../../Services/DecoderService';
+import VideoPlayer from '../../../Dumb/VideoPlayer/VideoPlayer';
 
 const post = (props) => {
 
     var content = null;
 
+    console.log(props.post);
+
     if (props.post.embedded_html) {
+        console.log('here1');
         // if a video
         const html  = DecoderService.decodeHtml(props.post.embedded_html);
         content = <div dangerouslySetInnerHTML={{__html: html}} style={{marginRight: '10px'}}></div>
     } else if (props.post.self_text_html) {
+        console.log('here2');
         // if a text post
         const html  = DecoderService.decodeHtml(props.post.self_text_html);
         content = <div dangerouslySetInnerHTML={{__html: html}} style={{marginRight: '10px'}}></div>
         // content = <div style={{marginRight: '10px'}}>{html}</div>
-    } else if (props.post.url) {
+    } else if (props.post.url && !props.post.video) {
+        console.log('here3');
         // if an image
         content = <img src={props.post.url} className="PostImage"/>
-    } 
+
+        console.log()
+    } else if (props.post.video) {
+        // a video, that's not embedded_html
+        console.log('here4');
+        content = <VideoPlayer video={props.post.video}/>
+    }
 
     var score = props.post.score.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
 
     let comments = [];
 
-    if (props.postComments) {
-        comments = props.postComments;
+    if (props.postComments.length > 0) {
+        comments = <div className="Comments">
+            {props.postComments}
+        </div>
+    }
+
+    let loadComments = '';
+
+    if (comments.length == 0) {
+        loadComments = <div className="LoadComments"
+                onClick={() => props.loadCommentsClicked(props.post)}>
+                Load comments
+            </div>
     }
 
     return(
@@ -59,14 +82,8 @@ const post = (props) => {
                     <div className="PostMainContent">
                         {content}
                     </div>
-                    <div className="LoadComments"
-                        onClick={() => props.loadCommentsClicked(props.post)}>
-                        Load comments
-                    </div>
-
-                    <div className="Comments">
-                        {comments}
-                    </div>
+                    {loadComments}
+                    {comments}
                 </div>
                 
            </div>

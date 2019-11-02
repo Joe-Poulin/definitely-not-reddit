@@ -1,8 +1,7 @@
 .PostComment {
     display: flex;
     flex-direction: column;
-    margin-right: 10px;
-    margin-left: 10px;
+    padding-right: 10px;
     border-bottom: 2px solid #eee;
     padding:8px;
 }

@@ -29,6 +29,21 @@ const PostService = {
                     value.value = c.data;
                     value.value.read = false;
 
+                    let video = null;
+
+                    if (value.value.secure_media && !value.value.media_embed.content) {
+                        console.log(value.value.secure_media);
+                        video = {
+                            hls: value.value.secure_media.reddit_video.hls_url,
+                            dash: value.value.secure_media.reddit_video.dash_url,
+                            fallback: value.value.secure_media.reddit_video.fallback_url,
+                        }
+                    }                    
+                    
+                    if (value.value.id === 'dh88y2') {
+                        console.log(video);
+                    }
+
                     return {
                         subreddit: value.value.subreddit,
                         subreddit_with_prefix: value.value.subreddit_name_prefixed,
@@ -40,7 +55,8 @@ const PostService = {
                         index: index,
                         embedded_html: value.value.media_embed.content,
                         self_text_html: value.value.selftext_html,
-                        self_text: value.value.selftext
+                        self_text: value.value.selftext,
+                        video: video,
                     };
                 });
 
@@ -71,11 +87,11 @@ const PostService = {
                 response.data.map((c, index) => {
                     //console.log(c);
 
-                    comments = c.data.children.map((c1, index) => {
+                    comments = c.data.children.map((c1, index1) => {
                         var value = {};
                         value.value = c1.data;
 
-                        return this.getComment(value.value);
+                        return this.getComment(value.value, index1);
                     })
                 });
 
@@ -84,7 +100,7 @@ const PostService = {
         });  
     },
 
-    getComment: function(c) {
+    getComment: function(c, index) {
 
         // handle body_html
         let html = '';
@@ -103,9 +119,12 @@ const PostService = {
         //     });
         // }
 
-        console.log(replies);
+        // console.log(replies);
+        console.log(c);
+
 
         return {
+            index: index,
             key: c.id,
             body_html: html,
             score: c.score,
