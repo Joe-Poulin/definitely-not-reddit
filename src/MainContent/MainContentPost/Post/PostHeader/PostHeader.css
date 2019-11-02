@@ -29,3 +29,24 @@
     color:gray;
     min-width:95px;
 }
+
+
+@media only screen and (max-width: 480px) {
+    .PostHeaderLeft {
+        flex-direction: column;
+    }
+
+    .PostTitle {
+        margin-left:0px !important;
+        font-size:18px !important;
+    }
+
+    .InboxTag {
+        margin-left:0px !important;
+        width: 30px !important;
+    }
+
+    .PostHeaderButtons {
+        min-width: auto;
+    }
+  }

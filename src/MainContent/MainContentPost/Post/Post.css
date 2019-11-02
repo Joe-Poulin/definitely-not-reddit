@@ -54,6 +54,22 @@
     font-weight: 400;
 }
 
+
+@media only screen and (max-width: 480px) {
+    .PostScore {
+        margin-left: 10px
+    }
+
+    .PostMainContent {
+        margin-left: 10px !important;
+        margin-right: 10px !important;
+    }
+
+    .Comments {
+        margin-left: 0px !important;
+    }
+  }
+
 .PostDate {
     margin-top: auto;
     margin-bottom: auto;    

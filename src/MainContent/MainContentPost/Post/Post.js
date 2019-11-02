@@ -59,14 +59,15 @@ const post = (props) => {
         <div>
            <PostHeader postTitle={props.post.title}/>
            <div className="PostMain">
-                <img src={senderImg} height="40px" width="40px"/>
+                <img src={senderImg} className="HiddenInMobile" height="40px" width="40px"/>
                 <div className="PostMainHeader">
+                    {/* <img src={senderImg} className="OnlyInMobile" height="40px" width="40px"/> */}
                     <div className="PostMainHeaderTop">
                         <div className="PostMainHeaderTopLeft">
                             <div className="SubredditName">
                                 {props.post.subreddit}
                             </div>
-                            <div className="SubredditLink">
+                            <div className="SubredditLink HiddenInMobile">
                                 &nbsp;&lt;https://www.reddit.com/{props.post.subreddit_with_prefix}&gt;&nbsp;
                             </div>
                             <div className="PostScore">
@@ -85,7 +86,6 @@ const post = (props) => {
                     {loadComments}
                     {comments}
                 </div>
-                
            </div>
         </div>
     ) 

@@ -1,8 +1,4 @@
-.MainContentPost {
-    position: absolute;
-    left: 285px;
-    right: 50px;
-}
+
 
 .Scroll {
     max-height:calc(100vh - 106px);
@@ -10,3 +6,12 @@
     overflow-y: scroll;
     overflow-x:hidden;
 }
+
+@media only screen and (min-width: 481px) { 
+    .MainContentPost {
+        position: absolute;
+        left: 285px;
+        right: 50px;
+    }
+}
+  
